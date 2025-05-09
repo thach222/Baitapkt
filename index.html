@@ -17,13 +17,13 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    var map = L.map('map').setView([9.181264, 105.163052], 17);
+    var map = L.map('map').setView([9.181264, 105.163052], 16);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Vẽ vòng tròn tại Trường CĐCĐ Cà Mau
+    // Vòng tròn tại Trường CĐCĐ Cà Mau
     var circle = L.circle([9.181264, 105.163052], {
       color: 'red',
       fillColor: '#aaf',
@@ -32,7 +32,7 @@
     }).addTo(map);
     circle.bindPopup("<b>Trường CĐCĐ Cà Mau</b>");
 
-    // Marker tại tọa độ mới: Tượng đài Cà Mau
+    // Marker đúng tọa độ Tượng đài Cà Mau
     var statueMarker = L.marker([9.176222, 105.150861]).addTo(map);
     statueMarker.bindPopup("<b>Tượng đài Cà Mau</b>");
   </script>
