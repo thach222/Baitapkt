@@ -23,20 +23,18 @@
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Vẽ vòng tròn màu nền xanh nhạt, viền đỏ, bán kính 120m
+    // Vẽ vòng tròn tại Trường CĐCĐ Cà Mau
     var circle = L.circle([9.181264, 105.163052], {
-      color: 'red',            // viền đỏ
-      fillColor: '#aaf',       // nền xanh nhạt
-      fillOpacity: 0.4,        // độ trong suốt
-      radius: 120              // bán kính 120m
+      color: 'red',
+      fillColor: '#aaf',
+      fillOpacity: 0.4,
+      radius: 120
     }).addTo(map);
-
-    // Thêm popup cho vòng tròn
     circle.bindPopup("<b>Trường CĐCĐ Cà Mau</b>");
 
-    // Marker tại Tượng đài Mũi Cà Mau
-    var statueMarker = L.marker([8.625, 104.7167]).addTo(map);
-    statueMarker.bindPopup("<b>Tượng đài Mũi Cà Mau</b>");
+    // Marker tại tọa độ mới: Tượng đài Cà Mau
+    var statueMarker = L.marker([9.176222, 105.150861]).addTo(map);
+    statueMarker.bindPopup("<b>Tượng đài Cà Mau</b>");
   </script>
 </body>
 </html>
