@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vòng tròn - Trường CĐCĐ Cà Mau</title>
+  <title>CAO HOANG THACH_CK2202A21</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -12,29 +12,33 @@
   </style>
 </head>
 <body>
-  <h3>Bản đồ: Trường Cao đẳng Cộng đồng Cà Mau</h3>
-  <div id="map"></div>  
+  <h3>Bản đồ: Tượng đài Cà Mau</h3>
+  <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    var map = L.map('map').setView([9.181264, 105.163052], 16);
+  
+    var tuongDaiCoords = [9.176222, 105.150861];
+
+    var map = L.map('map').setView(tuongDaiCoords, 17);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Vòng tròn tại Trường CĐCĐ Cà Mau
-    var circle = L.circle([9.181264, 105.163052], {
-      color: 'red',
-      fillColor: '#aaf',
-      fillOpacity: 0.4,
-      radius: 120
+    
+    var circle = L.circle(tuongDaiCoords, {
+      color: 'red',           
+      fillColor: 'green',     
+      fillOpacity: 0.3,       
+      radius: 60      
     }).addTo(map);
-    circle.bindPopup("<b>Trường CĐCĐ Cà Mau</b>");
 
-    // Marker đúng tọa độ Tượng đài Cà Mau
-    var statueMarker = L.marker([9.176222, 105.150861]).addTo(map);
-    statueMarker.bindPopup("<b>Tượng đài Cà Mau</b>");
+    var marker = L.marker(tuongDaiCoords).addTo(map);
+    marker.bindPopup("<b>Tượng đài Cà Mau</b>").openPopup();
+
+ 
+    circle.bindPopup("<b>Tượng đài Cà Mau</b>");
   </script>
 </body>
 </html>
